@@ -1,0 +1,12 @@
+name: "Summer Sun"
+description: Summer's personal site
+url: 
+
+
+markdown: kramdown
+
+highlighter: true
+
+permalink: pretty
+
+exclude: ["node_modules", "package.json", "Gruntfile.js", "README.md"]

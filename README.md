@@ -1,2 +1,1 @@
-SummerSun.github.io
-===================
+Welcome to summer's blog.
