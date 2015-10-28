@@ -1,17 +1,15 @@
-{% include header.html %}
+---
+layout: default
+---
+<div class="post">
 
-  <main class="wrap site__content post--single" role="main">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+  </header>
 
-    <article class="grid hentry">
-      <header class="post__header grid__col grid__col--4-of-6 grid__col--centered promo">
-        <h1 class="post__title">{{ page.title | widont }}</h1>
-        <p class="delta post__meta meta">{{ page.date | pretty }}</p>
-      </header>
-      <div class="post__content grid__col grid__col--4-of-6 grid__col--centered">
-        {{ content }}
-      </div>
-    </article>
+  <article class="post-content">
+    {{ content }}
+  </article>
 
-  </main>
-
-{% include footer.html %}
+</div>

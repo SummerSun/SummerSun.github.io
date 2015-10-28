@@ -1,11 +1,20 @@
-{% include header.html %}
+<!DOCTYPE html>
+<html>
 
-  <main class="wrap site__content" role="main">
+  {% include head.html %}
 
-    <div class="grid">
-      {{ content }}
+  <body>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
     </div>
 
-  </main>
+    {% include footer.html %}
 
-{% include footer.html %}
+  </body>
+
+</html>
