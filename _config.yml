@@ -1,8 +1,8 @@
 # Site settings
-title: Summer's Blog
+title: Summer Sun
 email: victoriasqq@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  This is Summer's personal blog. Write down what I see, what I experience and what I think.
+  Summer's blog. Blog whatever I want to write.
 baseurl: ""
 github_username:  SummerSun
 highlighter: pygments
