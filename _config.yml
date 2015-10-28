@@ -3,7 +3,7 @@ title: Summer's Blog
 email: victoriasqq@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   This is Summer's personal blog. Write down what I see, what I experience and what I think.
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: ""
 github_username:  SummerSun
 highlighter: pygments
 
