@@ -233,4 +233,27 @@
             font-size: 18px;
         }
     }
+	.windbg-results {
+		font-size: 14px;
+		font-family: monospace;
+		padding-bottom: 10px;
+		width: 1000px;
+		> span{
+			padding-left:20px;
+		}
+		> p {
+				display: block;
+				margin-bottom: initial;
+				padding-bottom: 5px;
+				> span {
+					padding-right: 50px;
+				}
+			}
+		.suspect {
+			color: #900;
+			font-weight: 600;
+		}
+	}
+	
 }
+
