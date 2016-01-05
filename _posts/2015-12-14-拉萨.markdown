@@ -1,7 +1,5 @@
 ---
-layout: post
 title: 拉萨
-no_fill_default_content: true
 date: 2015-12-14 21:21:28 +08:00
 categories: travel
 ---

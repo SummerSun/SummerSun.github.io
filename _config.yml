@@ -1,15 +1,28 @@
 # Site settings
 title: Summer Sun
-email: victoriasqq@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Summer's blog. Blog whatever I want to write.
-baseurl: ""
-github_username:  SummerSun
-highlighter: pygments
+  Explore infinite fun in limited life.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+
+author:
+    name: Summer
+    email: victoriasqq@gmail.com
+    github: SummerSun
+    weibo: QiQi-Sun
 
 # Build settings
 markdown: kramdown
-gems: ['jekyll-multiple-languages']
-languages: ['en', 'cn']
-language_default: 'en'
-fill_default_content: false
+
+encoding: "UTF-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+timezone: Asia/Shanghai
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      layout: "post"
+      no_fill_default_content: true

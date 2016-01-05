@@ -1,7 +1,5 @@
 ---
-layout: post
 title:  "100 percent CPU Usage"
-no_fill_default_content: true
 date:   2015-12-17 16:00:00
 categories: work
 ---
@@ -34,11 +32,11 @@ Basic information about the server, and our prod is built in .NET 4.5.
 <p>Processor Type: X64</p>
 <p>Process Bitness: 64-Bit</p>
 </div>
-Tools I use to do the trouble shooting WinDBG (64bits) and Debug dialog 2.0, and a little hang analyzer tool shared by Tess: [https://blogs.msdn.microsoft.com/tess/2007/12/12/automated-net-hang-analysis/](https://blogs.msdn.microsoft.com/tess/2007/12/12/automated-net-hang-analysis/).
+Tools I use to do the trouble shooting are WinDBG (64bits), Debug dialog 2.0, and a little hang analyzer tool shared by Tess: [HangAnalyzer](https://blogs.msdn.microsoft.com/tess/2007/12/12/automated-net-hang-analysis/).
 
 From the report of debug dialog tools, the dump was created when the process was in the middle of the garbage collection. 
 
-With command **!threadpool**, we could verify it:
+We could confirm this with command **!threadpool** in windbg:
 <div class="windbg-results">
 <p>0:000> !threadpool</p>
 <p>CPU utilization: 100%</p>
@@ -47,8 +45,9 @@ With command **!threadpool**, we could verify it:
 <p>Number of Timers: 2</p>
 <p>Completion Port Thread:Total: 9 Free: 9 MaxFree: 48 CurrentLimit: 9 MaxLimit: 1000 MinLimit: 24</p>
 </div>
-Good job Ops team! Make sure you get the right dump before starting! It would be better to get several right dumps.
-When you get a high cpu usage dump, the first command you would type in, is **!runaway**, and with this command, we got this:
+Make sure you get the right dump before starting! It would be better to get several right dumps.
+
+When you get a high cpu usage issue, the first command you would type in is **!runaway**, and with this command, we got this:
 
 <div class="windbg-results">
 <p>0:000> !runaway</p>
@@ -77,65 +76,39 @@ When you get a high cpu usage dump, the first command you would type in, is **!r
 <p><span>115:4af0 </span>        0 days 0:00:01.544</p>
 <p>.......</p>
 </div>
-
-
-Check the thread state and type, with command **!threads**:
+We could see so many high cpu usage threads. Check the threads state and type with command **!threads**:
 <div class="windbg-results">
 <p>0:000> !threads</p>
-
 <p>ThreadCount:      101</p>
-
 <p>UnstartedThread:  0</p>
-
 <p>BackgroundThread: 85</p>
-
 <p>PendingThread:    0</p>
-
 <p>DeadThread:       16</p>
-
-<p>Hosted Runtime:   no</p>  
+<p>Hosted Runtime:   no</p>
 
 <span>ID</span>    OSID  ThreadOBJ<span> </span>
 <span>State</span><span> GC Mode</span><span> </span><span> </span><span> </span><span>
 GC Alloc Context</span><span> </span><span> </span><span>Domain</span>
 <span>Lock Count</span><span>Apt Exception</span>
-
 <p>26    1 1dfc 0000000006f10080    28220 Preemptive  0000000000000000:0000000000000000 00000000036b6e50 0     Ukn</p>
-
-  <p>57    2 17f8 0000000006fc6610    2b220 Preemptive  0000000380196A78:00000003801980D0 00000000036b6e50 0     MTA (Finalizer)</p> 
-
-  <p>59    5 1850 000000001ae68b80  102a220 Preemptive  0000000000000000:0000000000000000 00000000036b6e50 0     MTA (Threadpool Worker)</p> 
-
+<p>57    2 17f8 0000000006fc6610    2b220 Preemptive  0000000380196A78:00000003801980D0 00000000036b6e50 0     MTA (Finalizer)</p> 
+<p>59    5 1850 000000001ae68b80  102a220 Preemptive  0000000000000000:0000000000000000 00000000036b6e50 0     MTA (Threadpool Worker)</p> 
 <p>60    6 1e78 000000001bdc9dd0    21220 Preemptive  0000000000000000:0000000000000000 00000000036b6e50 0     Ukn</p>
-
-  <p>61    7  970 000000001c9c04a0  1020220 Preemptive  0000000000000000:0000000000000000 00000000036b6e50 0     Ukn (Threadpool Worker)</p> 
-
-  <p>62   11 1ef0 000000001d8d1230  1029220 Preemptive  0000000000000000:0000000000000000 00000000036b6e50 0     MTA (Threadpool Worker)</p> 
-
-  <p>64   12 209c 000000001d8d3170  202b220 Preemptive  0000000240271B48:00000002402739B0 000000001af951c0 1     MTA</p> 
-
-  <p>65   43  cf4 000000001e211a10    21220 Preemptive  0000000000000000:0000000000000000 00000000036b6e50 0     Ukn</p> 
-
- <p>.......</p>
-
- <p>104   87 4208 0000000029994d50    20220 Preemptive  0000000000000000:0000000000000000 00000000036b6e50 0     Ukn</p>
-
- <p>105  226 3268 0000000025fccb30  1029220 Preemptive  00000002016BD808:00000002016BEF18 00000000036b6e50 0     MTA (Threadpool Worker)</p>
-
- <p>106  120 109c 0000000025fcd300  1029220 Preemptive  0000000741074138:0000000741075C10 00000000036b6e50 0     MTA (Threadpool Worker) </p>
-
- <p>107   30 4ab8 000000001e186c70  1029220 Preemptive  0000000280B82560:0000000280B83698 00000000036b6e50 0     MTA (Threadpool Worker)</p> 
-
- <p>108  246 4250 000000001e188bb0  1029220 Preemptive  00000005814BB7A8:00000005814BBAC8 00000000036b6e50 0     MTA (Threadpool Worker)</p> 
-
- <p class="suspect">109   13 3cbc 000000001e185cd0  1029220 Cooperative 00000004807B6338:00000004807B7B90 000000001af951c0 1     MTA (Threadpool Worker)</p>
-
- <p>110   99 3d28 000000001e187440  1029220 Preemptive  0000000000000000:0000000000000000 00000000036b6e50 0     MTA (Threadpool Worker)</p>
-
- <p>111  112 29a8 000000001e189380  1029220 Preemptive  00000005009385C8:0000000500938F48 00000000036b6e50 0     MTA (Threadpool Worker)</p>
+<p>61    7  970 000000001c9c04a0  1020220 Preemptive  0000000000000000:0000000000000000 00000000036b6e50 0     Ukn (Threadpool Worker)</p> 
+<p>62   11 1ef0 000000001d8d1230  1029220 Preemptive  0000000000000000:0000000000000000 00000000036b6e50 0     MTA (Threadpool Worker)</p> 
+<p>64   12 209c 000000001d8d3170  202b220 Preemptive  0000000240271B48:00000002402739B0 000000001af951c0 1     MTA</p> 
+<p>65   43  cf4 000000001e211a10    21220 Preemptive  0000000000000000:0000000000000000 00000000036b6e50 0     Ukn</p> 
+<p>.......</p>
+<p>104   87 4208 0000000029994d50    20220 Preemptive  0000000000000000:0000000000000000 00000000036b6e50 0     Ukn</p>
+<p>105  226 3268 0000000025fccb30  1029220 Preemptive  00000002016BD808:00000002016BEF18 00000000036b6e50 0     MTA (Threadpool Worker)</p>
+<p>106  120 109c 0000000025fcd300  1029220 Preemptive  0000000741074138:0000000741075C10 00000000036b6e50 0     MTA (Threadpool Worker) </p>
+<p>107   30 4ab8 000000001e186c70  1029220 Preemptive  0000000280B82560:0000000280B83698 00000000036b6e50 0     MTA (Threadpool Worker)</p> 
+<p>108  246 4250 000000001e188bb0  1029220 Preemptive  00000005814BB7A8:00000005814BBAC8 00000000036b6e50 0     MTA (Threadpool Worker)</p> 
+<p class="suspect">109   13 3cbc 000000001e185cd0  1029220 Cooperative 00000004807B6338:00000004807B7B90 000000001af951c0 1     MTA (Threadpool Worker)</p>
+<p>110   99 3d28 000000001e187440  1029220 Preemptive  0000000000000000:0000000000000000 00000000036b6e50 0     MTA (Threadpool Worker)</p>
+<p>111  112 29a8 000000001e189380  1029220 Preemptive  00000005009385C8:0000000500938F48 00000000036b6e50 0     MTA (Threadpool Worker)</p>
 <p>......</p>
-</div>
- 
+</div> 
 
 we found two interesting things through the above threads state:
 

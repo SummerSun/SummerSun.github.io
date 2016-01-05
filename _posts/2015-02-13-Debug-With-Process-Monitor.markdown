@@ -1,7 +1,5 @@
 ---
-layout: post
 title:  "Debug with Process Monitor"
-no_fill_default_content: true
 date:   2015-02-13 16:00:00
 categories: work
 ---
