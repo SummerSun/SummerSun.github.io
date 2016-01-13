@@ -111,58 +111,10 @@
 } // min-width: 768px
 
 /*
-	Not that old computer layout 
+	Huge-screen layout $ Not that old computer layout 
 */
 
-@media only screen and (min-width: 1280px) {
-
-	.the-header {
-		.unit-head {
-			.nav-global {
-				.logo {
-					border-bottom: 0 none;
-					display: block;
-					width: auto;
-					a {
-						line-height: 18px;
-						margin-bottom: 0;
-						padding-left: (@line-height * 2) * 1px;
-					}
-				}
-			}
-		}
-	} // the-header
-
-	.body {
-		float: left;
-		width: 100%;
-		margin-right: -450px;
-		.unit-body {
-			border-top: 0 none;
-			margin-right: 450px;
-			padding: @line-height * 1px (@line-height * 2) * 1px;
-		}
-	}
-
-	.the-footer {
-		background-color: transparent;
-		color: @main-font-color;
-
-		position: relative;
-		top: auto;
-		display: block;
-		float: left;
-		padding: 0 0 0 @line-height * 1px;
-		width: 420px;
-	}  // .the-footer
-
-} // min-width: 1280px
-
-/*
-	Huge-screen layout 
-*/
-
-@media only screen and (min-width: 1410px) {
+@media only screen and (min-width: 1410px), screen and (min-width: 1280px) {
 
 	.the-header {
 			float: left;

@@ -423,30 +423,30 @@ h6 {
 h1,
 .h1 {
   font-size: 30px;
-  line-height: 52px;
+  line-height: 45px;
   margin-top: 52px;
-  margin-bottom: 26px;
+  margin-bottom: 20px;
 }
 h2,
 .h2 {
   font-size: 30px;
-  line-height: 52px;
+  line-height: 45px;
   margin-top: 52px;
-  margin-bottom: 26px;
+  margin-bottom: 20px;
 }
 h3,
 .h3 {
   font-size: 25.888px;
   line-height: 26px;
   margin-top: 26px;
-  margin-bottom: 26px;
+  margin-bottom: 15px;
 }
 h4,
 .h4 {
   font-size: 18.541px;
   line-height: 26px;
   margin-top: 26px;
-  margin-bottom: 26px;
+  margin-bottom: 15px;
 }
 p,
 ul,
@@ -679,6 +679,9 @@ pre {
 }
 .unit-article ul {
   list-style: square;
+}
+.unit-article ul li {
+  margin-bottom: 10px;
 }
 .unit-article ol {
   list-style: decimal;
@@ -981,31 +984,6 @@ pre {
   .the-header .unit-head .nav-global .logo a:hover {
     background-color: transparent;
   }
-}
-/*
-	Not that old computer layout 
-*/
-@media only screen and (min-width: 1280px) {
-  .the-header .unit-head .nav-global .logo {
-    border-bottom: 0 none;
-    display: block;
-    width: auto;
-  }
-  .the-header .unit-head .nav-global .logo a {
-    line-height: 18px;
-    margin-bottom: 0;
-    padding-left: 52px;
-  }
-  .body {
-    float: left;
-    width: 100%;
-    margin-right: -450px;
-  }
-  .body .unit-body {
-    border-top: 0 none;
-    margin-right: 450px;
-    padding: 26px 52px;
-  }
   .the-footer {
     background-color: transparent;
     color: #2d2d2d;
@@ -1017,10 +995,11 @@ pre {
     width: 420px;
   }
 }
+
 /*
-	Huge-screen layout 
+	Huge-screen layout $ Not that old computer layout 
 */
-@media only screen and (min-width: 1410px) {
+@media only screen and (min-width: 1410px), screen and (min-width: 1280px) {
   .the-header {
     float: left;
     width: 19%;
