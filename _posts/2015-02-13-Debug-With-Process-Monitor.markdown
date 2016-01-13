@@ -9,7 +9,7 @@ categories: work
 
 新接了一个web project。Dev machine setup完了以后成功build，结果发现site打不开。从IIS manager尝试启动site，直接抛出这样一个信息量稀少的提示：W3SVC service没有启动。
 
-<img src="{{ site.baseurl }}/pictures/w3svcError.jpg"> 
+<img src="http://7xq1tb.com1.z0.glb.clouddn.com/w3svcError.jpg"> 
 
 尝试启动W3SVC，失败！Deplendented service WAS未启动。启动WAS，可是无论是在servicemsc里面，还是以管理员身份运行的console里面，都是同样的错误：Access Denied。
 
@@ -17,11 +17,11 @@ Google到scott大神的[Blog](http://www.hanselman.com/blog/FixedWindowsProcessA
 
 按照link里的方法设置好filter， 强调一下作者说的：filter对process monitor <b>很重要</b>。
 
-<img src="{{ site.baseurl }}/pictures/filter.jpg">
+<img src="http://7xq1tb.com1.z0.glb.clouddn.com/filter.jpg">
 
 Filter出来的具体的access denied信息，问题就很清楚了：
 
-<img src="{{ site.baseurl }}/pictures/processMonitor.jpg">
+<img src="http://7xq1tb.com1.z0.glb.clouddn.com/processMonitor.jpg">
 
 启动WAS要创建一个文件（空文件，不知道要做什么用）：bindingInfo.tmp。打开error中的目录下才发现，之所以Access Denied因为这个目录下已经存在了这样一个文件，也不知道什么时候做了什么创建的这个文件。Delete，restart，Done。
 

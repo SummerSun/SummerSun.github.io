@@ -12,7 +12,7 @@ categories: travel
 
 拉萨火车站出站要查身份证、过安检。第一次看见高原上的人民，肤色黝黑透红，心里一惊。因为严重的高反，拉萨的前三天我都没法正常活动。头疼，呕吐，吸氧，打点滴，龟速游荡。听说西藏海拔最低、空气中含氧量最高的是林芝，有小江南之称。我决定改变行程去林芝补点氧气，回来再决定以后的行程。
 
-<img src="{{ site.baseurl }}/pictures/budla_palace.jpg" />
+<img src="http://7xq1tb.com1.z0.glb.clouddn.com/budla_palace.jpg" />
 
 早上六点不到，布达拉宫门前已停满开往林芝的大巴小巴车。几个月前的一次车祸，一辆旅游车翻进了雅鲁藏布江，尸骨无存。于是每车只能乘坐一半的乘客，并随车配备一名警察，严格限速。
 
@@ -24,13 +24,13 @@ categories: travel
 
 作为世界上迄今未被人类征服的高地之一，南迦巴瓦的每次现身都被认为是好运和神圣的征兆。白雪覆盖的高峰，偶尔有金色的阳光闪过。我想起了“因为山在那里”的典故。它就在那里，荣辱不惊，神圣不可侵犯。
 
-<img src="{{ site.baseurl }}/pictures/njbw_mountain.jpg" />
+<img src="http://7xq1tb.com1.z0.glb.clouddn.com/njbw_mountain.jpg" />
 
 离开林芝，我又回到了拉萨，直到离开西藏。期间去了羊卓雍措。来自日喀则的师傅，一边哼着民歌一边盘旋在令人胆战心惊的山路上，每一个三百六十度的转弯，看着来时的路，总让人唏嘘。若是这时发生意外，施救的过程都可以省略，非常干脆。
 
 羊湖，怎么也拍不出它的美来。静谧也好，嘈杂也好，它只高冷的美着。
 
-<img src="{{ site.baseurl }}/pictures/yamdrok_lake.jpg" />
+<img src="http://7xq1tb.com1.z0.glb.clouddn.com/yamdrok_lake.jpg" />
 
 八廓街里里外外的客栈、青旅，络绎不绝的游客。骑行的，包车的，转山转湖的，不同来处，不同目的。但是都会离开这里，或早或晚。
 
