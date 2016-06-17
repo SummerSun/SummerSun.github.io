@@ -1,13 +1,16 @@
 ---
+layout: post
 title:  "Debug with Process Monitor"
 date:   2015-02-13 16:00:00
-categories: work
+tags: [Work]
+image:
+  feature: abstract-10.jpg
 ---
 
 第一次用Process Monitor debug成功解决问题。
 
 
-新接了一个web project。Dev machine setup完了以后成功build，结果发现site打不开。从IIS manager尝试启动site，直接抛出这样一个信息量稀少的提示：W3SVC service没有启动。
+新接了一个项目。 Dev machine setup完了以后成功build，结果发现site打不开。从IIS manager尝试启动site，直接抛出这样一个信息量稀少的提示：W3SVC service没有启动。
 
 <img src="http://7xq1tb.com1.z0.glb.clouddn.com/w3svcError.jpg"> 
 

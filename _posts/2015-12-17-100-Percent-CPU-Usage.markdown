@@ -1,10 +1,13 @@
 ---
+layout: post
 title:  "100 percent CPU Usage"
 date:   2015-12-17 16:00:00
-categories: work
+tags: [Work]
+image:
+  feature: abstract-7.jpg
 ---
 
-Recently we meet a 100 percent CPU usage problem in production. I never met this kind of problem before, not to mention solved it. It costs me a long time to do the investigation. But after issue solved, everything suddenly became easy. Even though, there is still unclear field for me. I am sharing the thought and the process of the issue fixing, hope it helps if someone else meet the same error and correct me if I am wrong about anything.
+Recently we met a 100 percent CPU usage problem in production. I never met this kind of problem before, not to mention solved it. It costs me a long time to do the investigation. But after issue solved, everything suddenly became easy. Even though, there is still unclear field for me. I am sharing the thought and the process of the issue fixing, hope it helps if someone else meet the same error and correct me if I am wrong about anything.
 
 First of all, big thanks to Tess, for her fantastic blog and reply for my help email.
 Here is the Blog [https://blogs.msdn.microsoft.com/tess/](https://blogs.msdn.microsoft.com/tess/), anything you google about ASP.NET debug, hang, or performance issue, you may be led to this blog by almost all means.

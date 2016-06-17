@@ -1,0 +1,13 @@
+---
+layout: post
+title: 读书-白鹿原
+description: 
+modified: 2016-05-01
+tags: [Reading]
+image:
+  feature: 
+  credit: 
+  creditlink: 
+---
+
+这本书读完不久，作者陈忠实先生就去世了，哀悼。
