@@ -9,7 +9,7 @@ tags: [Work]
 
 和 Travis CI 大战几十回合，终于在第二十几回合的时候把 nuget package 成功的 publish 到了 myget.
 
-Round 1: script in .travis.yml
+## Round 1: script in .travis.yml
 
 ```.travis.yml
 script：
@@ -23,7 +23,7 @@ script：
 我对 bash script 不了解，从 stackoverflow 上看到这种 <<! 的方式 来避免 interactive，直接送进去 credential.
 但是 NoNoNo，script 并不知道你是在换行还是在干啥，通通放到一行上跑，而且这样写一点也不美丽。
 
-Round 2: publish.sh
+## Round 2: publish.sh
 
 那写个脚本直接跑吧。
 
@@ -88,7 +88,7 @@ npm ERR! Please include the following file with any support request:
 npm ERR!     /home/qisun/temp/npm-debug.log
 ```
 
-Round 3: deploy in .travis.yml
+## Round 3: deploy in .travis.yml
 
 Travis CI 可以直接 [deploy nuget package](https://docs.travis-ci.com/user/deployment/npm/)
 > however if you have a publishConfig.registry key in your package.json then Travis CI publishes to that registry instead.
@@ -127,7 +127,7 @@ npm ERR! Please include the following file with any support request:
 npm ERR!     /home/travis/build/Azure/generator-azure-iot-edge-module/npm-debug.log
 ```
 
-Round 4: script 直接写脚本吧
+## Round 4: script 直接写脚本吧
 ```.travis.yml
 script:
 - npm config set registry https://www.myget.org/F/generator-azure-iot-edge-module/npm/
