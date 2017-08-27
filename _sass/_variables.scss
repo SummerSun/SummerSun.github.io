@@ -1,50 +1,28 @@
-// Page
-// --------------------------------------------------
+$default-color: #555;
+$default-shade: #353535;
+$default-tint: #aaa;
+$grey-1: #979797;
+$grey-2: #e5e5e5;
+$grey-3: #f9f9f9;
+$white: #fff;
+$blue: #4a9ae1;
+$shadow-color: rgba(0, 0, 0, .2);
 
-$feature-image-height: 300px; // min 150px recommended
-$front-page-feature-image-height: 300px; // min 150px recommended
+$baskerville: 'Libre Baskerville', 'Times New Roman', Times, serif;
+$palatino: Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+$sans-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-// Typography
-// --------------------------------------------------
+$monospaced-font: Menlo, Monaco, monospace;
+$code-color: #bf616a;
 
-$base-font: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$heading-font: $base-font;
-$caption-font: $base-font;
-$code-font: monospace;
-$alt-font: serif;
-
-$doc-font-size: 16;
-$doc-line-height: 26;
-
-
-// set-up the body font-size / line-height
-body {
-	margin-top: 0px + $doc-line-height;
-	font-size: 0px + $doc-font-size;	
+@mixin box-sizing($type: border-box) {
+  -webkit-box-sizing: $type;
+     -moz-box-sizing: $type;
+          box-sizing: $type;
 }
 
-
-// Colors
-// --------------------------------------------------
-$base-color				   : rgba(#222,0.8);
-$body-color      		 : #e8e8e8;
-$text-color      		 : rgba(#222,0.8);
-$comp-color 	 		   : complement(#222); 
-$border-color    		 : lighten($base-color,60);
-$white           		 : #fff;
-$black           		 : #000;
-$link-color 		     : rgba(#222,0.8);
-
-$primary			       : #222;
-$success			       : #5cb85c;
-$warning			       : #dd8338;
-$danger				       : #C64537;
-$info				         : #308cbc;
-
-
-// Screen Size
-// --------------------------------------------------
-
-$small               : "only screen and (min-width: 30em)";
-$medium              : "only screen and (min-width: 48em)";
-$large               : "only screen and (min-width: 62.5em)";
+@mixin transition($args...) {
+  -webkit-transition: $args;
+     -moz-transition: $args;
+          transition: $args;
+}

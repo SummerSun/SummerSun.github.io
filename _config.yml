@@ -1,71 +1,34 @@
-title:            Summer Sun
-description:      Describe your website here.
-disqus_shortname: 
-reading_time:     true
-words_per_minute: 200
-# Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
-# When testing locally leave blank or use http://localhost:4000
-url:
+# Permalinks
+permalink:      /:year-:month-:day/:title
 
-# Owner/author information
-owner:
-  name:           Summer
-  avatar:         avatar.jpg
-  bio:            "A programmer with lots of non-programming habits."
-  email:          victoriasqq@gmail.com
-  # Social networking links used in footer. Update and remove as you like.
-  twitter:        
-  facebook:       
-  github:        SummerSun 
-  stackexchange:  
-  linkedin:       
-  instagram:      
-  flickr:         
-  tumblr:         
-  # google plus id, include the '+', eg +mmistakes
-  google_plus:
+# Setup
+title:          Summer Sun
+paginate:       5
+baseurl:        ""
+url:            "https://summersun.github.io"
 
-# Background image to be tiled on all pages
-background: 
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        :compressed
 
-# Analytics and webmaster tools stuff goes here
-google_analytics:   
-google_verify:      
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+# Build settings
+markdown:       kramdown
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
-future:      true
-highlighter: rouge
-markdown: kramdown
-markdown_ext:  markdown,mkdown,mkdn,mkd,md
+# About
+author:
+  name:         Summer Sun
+  email:        victoriasqq@gmail.com
 
-kramdown:
-  auto_ids: true
-  input: GFM
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
+excerpt_separator: <!--excerpt-->
 
+# Gems
 plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-gist
   - jekyll-feed
-sass:
-  sass_dir: _sass
-  style: compressed
 
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title/
-
-# Amount of post to show on home page
-paginate: 5
-
-
-include: 
-  - .htaccess
 exclude: 
   - "*.less"
   - "*.sublime-project"
