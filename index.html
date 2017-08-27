@@ -35,7 +35,7 @@ image:
     {% endif %}
   </header>
   <div class="entry-content">
-    {{ post.content |truncatewords: 100 || split:'<!--break-->' | first }}
+    {{ post.content |truncatewords: 10 || split:'<!--break-->' | first }}
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
 {% endfor %}

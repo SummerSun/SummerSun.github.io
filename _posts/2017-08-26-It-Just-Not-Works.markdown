@@ -5,14 +5,14 @@ date:   2017-08-26 10:00:00
 tags: [Work]
 ---
 
-首先，请理解这种中英文混杂的表达方式。如有不适，只能是你的问题。
+首先，请理解这种中英文混杂的表达方式。如有不适，肯定不是我的问题。
 
 和 Travis CI 大战几十回合，终于在第二十几回合的时候把 nuget package 成功的 publish 到了 myget.
 
 ## Round 1: script in .travis.yml
 
 ```.travis.yml
-script：
+script:
 - npm adduser --registry=https://myget.org/F/generator-azure-iot-edge-module/npm/ <<!
   $NPM_USER
   $NPM_PSW
@@ -20,7 +20,7 @@ script：
   !
 - npm publish
 ```
-我对 bash script 不了解，从 stackoverflow 上看到这种 <<! 的方式 来避免 interactive，直接送进去 credential.
+对 bash script 不了解，从 stackoverflow 上看到这种 <<! 的方式 来避免 interactive，直接送进去 credential.
 但是 NoNoNo，script 并不知道你是在换行还是在干啥，通通放到一行上跑，而且这样写一点也不美丽。
 
 ## Round 2: publish.sh
@@ -63,29 +63,28 @@ Google 大法 npm ERR! code ENEEDAUTH 也没找到啥线索，因为错误很清
 9. bash test.sh '' '' ''
 ```
 组合拳 1-2-3-7, logged in succeed, but publish failed.
+
 组合拳 4-5-6-7 just works.
+
 直拳 8 logged in succeed, but publish failed.
-直拳 9 just works
 
-可是 .travis.yml script 直接把环境变量传参数执行，应该就是直接把 value 塞进去，不会有双引号单引号什么事，我也很绝望呀。
+直拳 9 just works.
 
-``` log from travis ci build
-Username: vschina
-Password:
-Email: (this IS public) qisun@microsoft.com
-Logged in as vschina on https://www.myget.org/f/generator-azure-iot-edge-module/npm/.
-qisun@QISUN-PROXY:~/temp$ npm publish
-npm ERR! Linux 3.2.0-4-amd64
-npm ERR! argv "/usr/bin/nodejs" "/usr/bin/npm" "publish"
-npm ERR! node v6.11.2
-npm ERR! npm  v3.10.10
+可是 .travis.yml script 直接把环境变量传参数执行，应该就是直接把 value 塞进去，不会有双引号单引号什么事，我也很绝望，天上掉下来一个大拿帮帮我吧。
+
+log from travis ci build:
+```
+2.89s$ bash publish.sh $NPM_USER $NPM_PSW $NPM_EMAIL
+e: ail: (this IS public) ail: (this IS public) Logged in as [secure] on https://www.myget.org/F/generator-azure-iot-edge-module/npm/.
+npm ERR! Linux 4.11.6-041106-generic
+npm ERR! argv "/home/travis/.nvm/v0.10.48/bin/node" "/home/travis/.nvm/v0.10.48/bin/npm" "publish"
+npm ERR! node v0.10.48
+npm ERR! npm  v2.15.1
 npm ERR! code ENEEDAUTH
-
 npm ERR! need auth auth required for publishing
 npm ERR! need auth You need to authorize this machine using `npm adduser`
-
 npm ERR! Please include the following file with any support request:
-npm ERR!     /home/qisun/temp/npm-debug.log
+npm ERR!     /home/travis/build/Azure/generator-azure-iot-edge-module/npm-debug.log
 ```
 
 ## Round 3: deploy in .travis.yml
@@ -141,6 +140,9 @@ script:
 ```
 Just Works.
 
-前面三个回合，来回试了很多次，依旧没有想到能 work 的方法。
-github npm isuues，travis ci issues，很多类似的问题，但是要么就是 scenario 不同，要么就是 solution just not work。
+Travis CI 可以在 settings 里设置不在 build log 里直接打印环境变量，所以没有加密，直接写文件，应该不会有太大的 security 的问题。
+
+前面三个回合，来回测试了很多次，依旧没有找到能 work 的方法。
+github npm isuues，travis ci issues，都是想办法怎么 Auth，暂时没找到已经 auth 成功但是依旧不能 publish 的情况。
+
 先 mark 一下这些回合，等我找到解决的方法再来更新。
