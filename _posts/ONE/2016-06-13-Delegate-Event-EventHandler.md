@@ -1,6 +1,7 @@
 ---
 layout: post
 title: C# Delegate, Event and EventHandler
+categories: ONE
 ---
 
 Being a .NET developer, one must have used delegates and eventhanders.

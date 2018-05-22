@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Debug with Process Monitor"
+categories: ONE
 ---
 
 记录第一次用Process Monitor debug成功解决问题。

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 读《给青年的十二封信》之二
+categories: ONE
 ---
 
 《给青年的十二封信》的读书笔记的第二部分。

@@ -1,6 +1,7 @@
 ---
 title: WHAT YOU ARE AND WHAT YOU THINK YOU ARE
 layout: post
+categories: ONE
 ---
 
 算是《教父》和《教父II》的影评吧。

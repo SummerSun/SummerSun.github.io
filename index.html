@@ -4,28 +4,10 @@ title: Home
 ---
 
 <div class="catalogue">
-  {% for post in paginator.posts %}
-    <a href="{{ post.url | prepend: site.url }}" class="catalogue-item">
-      <div>
-        <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
-        <h1 class="catalogue-title">{{ post.title }}</h1>
-
-        <p>
-          {{ post.content | | split:'<!--excerpt-->' | first }}
-        </p>
-
-      </div>
-    </a>
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.url }}" class="left arrow">&#8592;</a>
-  {% endif %}
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.url }}" class="right arrow">&#8594;</a>
-  {% endif %}
-
-  <span>{{ paginator.page }}</span>
+  <h1><a href="/one">ONE</a></h1>
+  <p>Blogs of big sister, topics including but not limited coding, traveling and movies</p>
+  <h1><a href="/two">TWO</a></h1>
+  <p>Blogs of the most beatiful girl which found of chinese traditional tea culture and reading</p>
+  <h1><a href="/three">THREE</a></h1>
+  <p>Blogs of the littlest girl, topics have no focus</p>
 </div>

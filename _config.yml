@@ -2,7 +2,7 @@
 permalink:      /:year-:month-:day/:title
 
 # Setup
-title:          Summer Sun
+title:          Potatoes
 paginate:       5
 baseurl:        ""
 url:            "https://summersun.github.io"
@@ -17,7 +17,7 @@ markdown:       kramdown
 
 # About
 author:
-  name:         Summer Sun
+  name:         Potatoes
   email:        victoriasqq@gmail.com
 
 excerpt_separator: <!--excerpt-->

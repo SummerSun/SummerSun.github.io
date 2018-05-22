@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "It Just Not Works"
+title:  It Just Not Works
+categories: ONE
 ---
 
 首先，请理解这种中英文混杂的表达方式。如有不适，且忍着吧。
