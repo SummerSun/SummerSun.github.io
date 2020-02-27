@@ -1,14 +1,9 @@
 ---
-layout: post
-title: "About"
-author: "Summer"
-permalink: /about/
+layout: default
+title: About Me
 ---
-
-Three sisters, maybe three potatoes to our parents.
-
-Just one day, come up with an idea that writing blogs together.
-
-Share the thought and findings. You will find three totally different styles.
-
+<ul>
+<li>GitHub: https://github.com/SummerSun</li>
+<li>LinkedIn: </li>
+</ul>
 

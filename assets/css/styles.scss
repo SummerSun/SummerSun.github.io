@@ -1,0 +1,77 @@
+---
+---
+@import "main";
+
+body,button,input,select,textarea {
+    color: #574d4d;
+    font-family: "Droid Serif","Times New Roman",serif;
+}
+.date {
+    display: inline-block;
+    font-family: monospace;
+    color: darkgray;
+}
+.site {
+    margin: 0 auto;
+    width: 955px;
+}
+.site-header {
+    background-size: 5px auto;
+    font-family: "Droid Sans",Arial,Helvetica,sans-serif;
+    margin: 0 0 4.5em;
+    padding: 3em 0 1.5em;
+}
+.navigation-main {
+    clear:both;
+    display: block;
+    float: left;
+    margin: .73em 0;
+    width: 100%;
+}
+li {
+    list-style: none;
+    text-align: -webkit-match-parent;
+}
+a {
+    text-decoration: none;
+}
+
+ul>li>h2 {
+    margin-block-start: 0.2em;
+}
+.entry a {
+    color: #333;
+    font-family: "Droid Serif","Times New Roman",serif;
+}
+.navigation-main li {    
+    float: right;
+    position: relative;
+    margin: 5px 12px;
+}
+.navigation-main a {
+    color: #737575;
+    display: block;
+    text-decoration: none;
+}
+.navigation-main a:visited {
+    color: #08c1c3;
+}
+.site-title {
+    color: #08c1c3;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 1.25;
+    margin: 1.25em 0 0.25em;;
+}
+.site-description {
+    color: #a5a5a5;
+    font-family: "Droid Serif","Times New Roman",serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0 0 1.5em;
+}
+
+.entry h1 {
+    margin-block-start: 0;
+}

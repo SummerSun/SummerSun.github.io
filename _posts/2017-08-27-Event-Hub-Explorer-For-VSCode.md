@@ -1,7 +1,6 @@
 ---
 layout: post
-title: Event Hub Explorer for Visual Studio Code
-categories: ONE
+title: VSCode 插件
 ---
 
 An extension of Azure Event Hub Explorer for Visual Studio Code.
