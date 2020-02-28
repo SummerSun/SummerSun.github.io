@@ -4,7 +4,7 @@
 
 body,button,input,select,textarea {
     color: #574d4d;
-    font-family: "Droid Serif","Times New Roman",serif;
+    font-family: "Gill Sans", sans-serif;
 }
 .date {
     display: inline-block;
@@ -17,15 +17,13 @@ body,button,input,select,textarea {
 }
 .site-header {
     background-size: 5px auto;
-    font-family: "Droid Sans",Arial,Helvetica,sans-serif;
-    margin: 0 0 4.5em;
-    padding: 3em 0 1.5em;
+    margin-right: 10%;
+    padding: 1.5em 0 1.5em;
 }
 .navigation-main {
     clear:both;
     display: block;
     float: left;
-    margin: .73em 0;
     width: 100%;
 }
 li {
@@ -41,7 +39,6 @@ ul>li>h2 {
 }
 .entry a {
     color: #333;
-    font-family: "Droid Serif","Times New Roman",serif;
 }
 .navigation-main li {    
     float: right;
@@ -62,16 +59,27 @@ ul>li>h2 {
     font-weight: 700;
     letter-spacing: -2px;
     line-height: 1.25;
-    margin: 1.25em 0 0.25em;;
+    margin: 1.25em 0 0;;
+}
+
+.site-title a:visited {
+    color: #08c1c3;
 }
 .site-description {
     color: #a5a5a5;
-    font-family: "Droid Serif","Times New Roman",serif;
     font-size: 1.4rem;
     font-weight: 400;
-    margin: 0 0 1.5em;
+    margin-bottom: 3em;
 }
 
 .entry h1 {
     margin-block-start: 0;
+    font-size: 1.75rem;
+}
+
+footer.entry-meta {
+    font-size: 1.2rem;
+    background-size: 5px auto;
+    color: #8c8c8c;
+    padding: .25em 0 1em
 }
