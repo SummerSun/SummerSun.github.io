@@ -6,7 +6,7 @@ title: Summer Sun
 <hgroup>
     <h1 class="site-title">
       <a href="/" title="Everything">Radom thoughts</a></h1>
-    <h1 class="site-description">Radom thoughts about code, life.</h1>
+    <h1 class="site-description">coding, reading, travelling...</h1>
   </hgroup>
   <div class="entry">
     {% for post in site.posts %}
